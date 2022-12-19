@@ -22,7 +22,7 @@ export const adminPannelOptions = [
 		child_open: false,
 	},
 	{
-		label: 'Prducts',
+		label: 'Products',
 		icon: <LocalLibraryIcon />,
 		path: '/admin/products',
 	},
