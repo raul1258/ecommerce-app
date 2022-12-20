@@ -24,6 +24,7 @@ import PSP from "../components/Customer/PSP";
 import AdminHoc from "../HOC/AdminHoc";
 
 // import Career from "../components/Career"; //example page
+
 const ProtectedRoute = () => {
   if (true) {
     // TODO: check if user is logged in as admin
@@ -85,8 +86,8 @@ function Navs() {
           <Route
             element={
               <AdminHoc>
-                {/* <Career/>
-                 */}
+                {/* <Career/> */}
+                Rahul Jaiswal
                  <h2>go to career section</h2>
               </AdminHoc>
             }
