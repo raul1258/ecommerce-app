@@ -87,7 +87,6 @@ function Navs() {
             element={
               <AdminHoc>
                 {/* <Career/> */}
-                Rahul Jaiswal
                  <h2>go to career section</h2>
               </AdminHoc>
             }
