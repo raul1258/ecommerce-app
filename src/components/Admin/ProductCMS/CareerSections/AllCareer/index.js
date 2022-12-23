@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
 import {
 	Button,
 	Grid,
@@ -8,14 +8,11 @@ import {
 	TextareaAutosize,
 	TextField,
 } from '@mui/material';
-import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import AllCareerView from './AllCareerView';
 import { useDispatch, useSelector } from 'react-redux';
-import * as actionTypes from '../../../../../store/actions';
 import ImageInputField from '../../../../common/ImageInputField';
-import { Editor, EditorState } from 'draft-js';
-import 'draft-js/dist/Draft.css';
+
 
 const initialValues = {
 	category: [], //m d
@@ -49,15 +46,10 @@ const initialValues = {
 };
 function CareerSection({ saveData }) {
 	const [editBtn, setEditBtn] = useState(false);
-	const [editorState, setEditorState] = useState(EditorState.createEmpty());
 	const [pageNo, setPageNo] = useState(1);
 	const [pageSize, setPageSize] = useState(10);
 	const dispatch = useDispatch();
-	const AllCareer =
-		useSelector((state) => state.openToAllData.AllCareer) || null;
-	useEffect(() => {
-		dispatch({ type: actionTypes.GET_ALL_CAREER, pageNo, pageSize });
-	}, []);
+	let AllCareer=[];
 	const formik = useFormik({
 		initialValues: {
 			...initialValues,
@@ -84,10 +76,7 @@ function CareerSection({ saveData }) {
 		setEditBtn(!editBtn);
 	};
 
-	const onChangeEditor = (editorState) => {
-		setEditorState(editorState);
-		formik.setFieldValue('large_content', editorState.getCurrentContent());
-	}
+	
 	return (
 		<form onSubmit={formik.handleSubmit}>
 			<Grid
@@ -658,13 +647,7 @@ function CareerSection({ saveData }) {
 							onChange={formik.handleChange}
 						/>
 					</Grid>
-					<Grid item xs={12}>
-						<Editor
-							editorState={editorState}
-							onChange={onChangeEditor}
-						/>
-					</Grid>
-
+				
 					<Grid item xs={6}>
 						<label className="inp-label" htmlFor="meta_title">
 							Meta Title
