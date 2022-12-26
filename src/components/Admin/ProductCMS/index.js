@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -10,7 +10,7 @@ import './CareerSections.css';
 
 
 function ProductCMS(saveData) {
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const [value, setValue] = React.useState(0);
 	// const navigate = useNavigate();
 	const handleChange = (event, newValue) => {
