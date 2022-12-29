@@ -19,7 +19,7 @@ import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-// import Moment from 'react-moment';
+import Moment from 'react-moment';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 // import FileDownloadDoneIcon from '@mui/icons-material/FileDownloadDone';
@@ -333,9 +333,9 @@ function SortableTable({
 												} else if (item.type === 'date') {
 													return (
 														<TableCell key={item.id} align="right">
-															{/* <Moment format="DD/MM/YYYY">
+															<Moment format="DD/MM/YYYY">
 																{row[item.id]}
-															</Moment> */}
+															</Moment>
 														</TableCell>
 													);
 												} else if (item.type === 'image') {

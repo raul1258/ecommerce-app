@@ -1,12 +1,16 @@
 import React from 'react'
-
-
+import AddCategories from './AddCategories'
+import AddBanner from './AddBanner'
+import AddFeaturedProducts from './AddFeaturedProducts'
+import AddFooter from './AddFooter'
 function LandingPageCMS() {
   return (
-    <>
-    <div><h2>LandingPageCMS</h2></div>
-   
-    </>
+    <div>     
+      <AddCategories/>
+      <AddBanner/>
+      <AddFeaturedProducts/>
+      <AddFooter/>
+    </div>
   )
 }
 
