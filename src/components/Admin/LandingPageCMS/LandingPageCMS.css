@@ -15,6 +15,15 @@
     font-weight: 800;
     flex-wrap:wrap
 }
+.product-from-search{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 20px;
+  font-size: 15px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
 .cat-dropodown div{
   border: 1px solid #00000017;
   padding: 5px;
