@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import React from "react";
 import ScearchDropDown from "../../common/ScearchDropDown";
 import { ProductCategories } from "../../../constants";
@@ -6,14 +6,23 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 import './LandingPageCMS.css'
 
-function AddCategories() {
+function AddCategories({saveLandingPageInfo}) {
   const [selectedCategories, setSelectedCategories] = React.useState([]);
+  
   return (
     <Grid className="container" container>
-       <Grid item xs={12}>
+       <Grid 
+       sx={{
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center'
+
+       }}
+       item xs={12}>
         <h1>
           Add Categories
         </h1>
+        <Button onClick={() => saveLandingPageInfo('categories',selectedCategories)}>Save</Button>
         </Grid>
       <Grid item xs={12}>
         <div

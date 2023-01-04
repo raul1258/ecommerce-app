@@ -3,10 +3,24 @@ import AddCategories from './AddCategories'
 import AddBanner from './AddBanner'
 import AddFeaturedProducts from './AddFeaturedProducts'
 import AddFooter from './AddFooter'
+import { v4 as uuidv4 } from 'uuid';
+import { setDoc, doc } from "firebase/firestore";
+import {db} from '../../../FirebaseConfig'
 function LandingPageCMS() {
+
+  const saveLandingPageInfo=async(section,data)=>{
+
+    //call firebase query to store this data in landing page collection at doc_id=section
+
+    await setDoc(doc(db,"landingPage",section),{
+      ...data
+    });
+    alert("categories updated")
+  }
+
   return (
     <div>     
-      <AddCategories/>
+      <AddCategories saveLandingPageInfo={saveLandingPageInfo}/>
       <AddBanner/>
       <AddFeaturedProducts/>
       <AddFooter/>
