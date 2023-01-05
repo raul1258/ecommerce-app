@@ -21,7 +21,7 @@ function LandingPageCMS() {
     <div>
       <AddCategories saveLandingPageInfo={saveLandingPageInfo} />
       <AddBanner saveLandingPageInfo={saveLandingPageInfo}/>
-      <AddFeaturedProducts />
+      <AddFeaturedProducts saveLandingPageInfo={saveLandingPageInfo}/>
       <AddFooter />
     </div>
   );
