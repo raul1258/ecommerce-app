@@ -15,9 +15,10 @@ function CategoryPage() {
     }
     useEffect(() => {
     //call firestore in product collect get all products where product category==category
-
+    //see from the class video or ask from sir aboout this
    fetchData(category);
     }, [params])
+
   return (
     <div>
       Category Page {category}
